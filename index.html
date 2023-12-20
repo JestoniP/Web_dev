@@ -1,48 +1,25 @@
 <html>
 	<head>
-		<title>Fetch API</title>
+		<title>Game Java 101</title>
+	
 		
-		<link rel="stylesheet" href="animetion.css">
 	</head>
 	<body>
-			<div class="border">Name :<div id="name"></div></div>
-			<div class="border">Birth Year :<div id="birthday"></div></div>
-			<div class="border">Gender : <div id="gender"></div></div>
-			<div class="border">HomeWorld<div id="homeWorld"></div></div>
-			<button id="myBtn">Fetch Now</button>
-	
 		<script>
+			
+			
+			while(true){
+				let Gnumber = prompt("Guest a Number for 1 to 5?");
+				let Rnumber = Math.floor(Math.random()*5);
+				if (Gnumber == Rnumber){
+				console.log ("Correct the number is",Gnumber);
+				break
+				} else {
+				console.log ("You guessed",Gnumber,"But the right number was",Rnumber);
+				}
+			}
+			
 		
-		
-		const name2 = document.getElementById("name");
-		const birthday2 = document.getElementById("birthday");
-		const gender2 = document.getElementById("gender");
-		const homeWorld2 = document.getElementById("homeWorld");
-		
-		const button = document.getElementById("myBtn")
-		button.addEventListener("click", myFunction);
-		
-		
-		
-		function myFunction() {
-			name2.innerHTML = "<em>Loading...</em>"
-			birthday2.innerHTML = "<em>Loading...</em>"
-			gender2.innerHTML = "<em>Loading...</em>"
-			homeWorld2.innerHTML = "<em>Loading...</em>"
-		
-		
-			let Rnumber = Math.floor(Math.random()*83);
-			let mylink = `https://swapi.dev/api/people/${Rnumber}/`
-			fetch(mylink)
-				.then(reponse => reponse.json())
-				.then(data => {
-					name2.innerHTML = data['name'];
-					birthday2.innerHTML = data['birth_year'];
-					gender2.innerHTML = data['gender'];
-					homeWorld2.innerHTML = data['homeworld'];
-					//console.log(data)
-				})
-		}
 		</script>
 		
 	</body>
